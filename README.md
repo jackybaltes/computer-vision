@@ -1,5 +1,5 @@
-# Simultaneous Loclalization and Mapping
+# Robot Vision
 
-This site includes information about my [simultaneous localization and mapping class](<http://ciolh007.github.io/simultaneous_localization_and_mapping>).
+This site includes information about my [robot vision](<http://ciolh007.github.io/robot_vision>) class.
 
 
