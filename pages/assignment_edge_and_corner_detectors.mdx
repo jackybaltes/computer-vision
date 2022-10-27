@@ -1,0 +1,104 @@
+# Assignment - Edge and Corner Detectors
+# 14th November 2022 - 23:59
+
+## Updates
+
+1) Page opened 28th Oktober 2022
+
+## Introduction
+
+The goal of this assignment is to develop a simple approach for 
+estimation of the motion of a humanoid robot, so-called ego motion
+estimation.
+
+Ego-motion estimation includes visual compass and visual odometry.
+
+The video below shows a video from our humanoid robot Robinion
+walking down a hallway in front of our lab.
+
+<div>
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/VHN9vbRzmNU" title="Robinion - Hallway 90" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+You can use this video or create a similar video for your own robot
+project.
+
+## Image Stabilization 
+
+First, we implement a system to stabilize the image and reduce
+motion blur for further processing.
+
+Apply an edge detector and/or corner detector to extract areas that
+can be localized accuractely either in one or two dimensions.
+
+Apply a filter to the edge/corner image to remove the motion blur
+in the image.
+
+## Visual compass
+
+Extend your approach to include an estimate of the current orientation
+of the robot. 
+
+The shift in orientation can be estimated by calculating the 
+cross correlation of the edge/corner image.
+
+## Visual Odometry
+
+Extend your approach to compute an estimate of the linear motion of
+the robot.
+
+Points that do not lie in the center in the image will move 
+towards the edges. The exact movement depends on the
+motion of the robot as well as the 3D coordinates of the point.
+
+Hence the edge image will be scaled by forward motion.
+
+
+
+## OpenCV
+
+The [OpenCV](http://opencv.org) library is a powerful computer vision library
+with language bindings for python, java, javascript, and C++. 
+The library includes many high performance implementation of simple
+and advanced vision algorithms.
+You can use this library when implementing a solution to This
+assignment.
+
+## Honesty declaration
+
+By submitting an assignment, you claim that your submission is only your own work. 
+This means that you have developed the design, implemented the code, run the experiments, 
+and all other work necessary to complete the assignment by yourself.
+
+If you discussed your work with other students or used sources on the Internet, then you **must**
+say so clearly at the beginning of the assignment.
+
+You can discuss parts of the assignment with others, but these discussions must be limited 
+to sharing ideas on a whiteboard or notepad. If you exchange code/programs/designs or 
+exchange any material via the Internet, then you must say so in your honesty declaration.
+
+Fill out the [Honesty Declaration](https://docs.google.com/document/d/1Z9FyOFt--OL_cqse55b-CifBgPDfFZi2L6-sUQBvZ4I/edit?usp=sharing) 
+and add any external sources that you used during the assignment.
+
+## Submissions
+
+This assignment must be done individually. 
+
+If you use information or code that is not your own (e.g., sample code from the Internet, 
+ideas for new features from a classmate, etc.), then you must specify this in your assignment 
+write-up. Failure to disclose that you used external sources will lead to disciplinary actions.
+
+To hand in your assignment:
+
+  1) Create a directory to hold all of your data. The directory name should be \<student id\>_a\<number\>, 
+     where \<student id\> is your student id and \<number\> is the number of the assignment,
+  1) Create a directory source inside of the directory \<student id\>_a\<number\>. 
+  1) Put the source code, which may contain of multiple files, for your assignment’s solution 
+     into the directory source.
+  1) Your prg\ram must compile by just running the command make in the source directory or a 
+     similar step for your programming language of choice.
+  1) Write a README file to explain anything you feel is necessary or important about your 
+     submission. This may include special features/bugs of your program. Describe what parts 
+     of the assignment you implemented. It is in your interest to simplify the job of the marker.
+
+
