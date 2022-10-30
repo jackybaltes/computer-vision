@@ -8,7 +8,7 @@
 ## Introduction
 
 The goal of this assignment is to develop a simple approach for 
-estimation of the motion of a humanoid robot, so-called ego motion
+estimation of the motion of a robot, so-called ego motion
 estimation.
 
 Ego-motion estimation includes visual compass and visual odometry.
@@ -17,11 +17,34 @@ The video below shows a video from our humanoid robot Robinion
 walking down a hallway in front of our lab.
 
 <div>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/VHN9vbRzmNU" title="Robinion - Hallway 90" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/VHN9vbRzmNU" title="Robinion - Hallway 90" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 You can use this video or create a similar video for your own robot
 project.
+
+## Methodology
+
+Our goal is to develop an efficient and simple algorithm for 
+estimating the angular and linear velocities of a moving robot.
+
+The idea is that instead of assuming a 3D world scene, we assume that the
+picture captured by the camera is created by a virtual image plane
+that is parallel to the camera. This assumption is valid if the distance
+of most objects to the camera is similar or objects are far away from the
+camera. Therefore, the robot looks at the horizon instead of the floor in front of it.
+
+In effect, we assume that our camera is looking at a large image of
+the world. We track the position of feature points in the image to estimate rotations
+(by detecting the rotation of edges in the image), and linear velocities
+(by checking the increase in scale of the feature points).
+
+<div>
+   ![cam][cam]
+</div>
+
+[cam]: ./camera_view.svg
+
 
 ## Image Stabilization 
 
