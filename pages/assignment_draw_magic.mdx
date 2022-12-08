@@ -1,0 +1,134 @@
+# Assignment - Edge and Corner Detectors
+# 22nd December 2022 - 23:59
+
+## Updates
+
+1) Page opened 8th December 2022
+
+## Introduction
+
+The goal of this assignment is to develop a magic trick that can be performed
+via the Internet.
+
+A user draws one of the [Zener symbols](https://en.wikipedia.org/wiki/Zener_cards)
+on a notepad. The Zener symbols include circle, plus, wave, square, and star.
+
+The computer correctly predicts the drawn symbol and then verifies it 
+by having the user show the drawn symbol to the screen.
+
+A video showing the magic trick is shown below.
+
+## Methodology
+
+The assignment can be broken down into three main parts: 
+training data, pose estimation, optical flow, classification, and revelation.
+
+### Training Data
+
+First record at least 5 subjects drawing the various Zener symbols. Your videos
+should look similar to the ones below.
+
+<div>
+<table>
+<tbody>
+<tr>
+<td>
+<iframe width="400" height="300" src="https://www.youtube.com/embed/J6isfzqS5ig" title="Drawing Zener Symbols" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</td>
+<td>
+<iframe width="400" height="300" src="https://www.youtube.com/embed/T3ZAjiuGfXg" title="Drawing Zener Symbols (Sun)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+### Pose Estimation
+
+You can use [Mediapipe](https://google.github.io/mediapipe/), [Movenet](https://www.tensorflow.org/lite/examples/pose_estimation/overview),
+or [Pose Detection](https://github.com/tensorflow/tfjs-models/tree/master/pose-detection)
+to find the position of the head and shoulders of the user.
+
+### Extract optical flow or other movement of feature points
+Implement a routine that can extract the optical flow from these regions of interest
+from a video sequence of the user drawing one of the symbols.
+
+Note that in addition to the optical flow, the timing may also be an important
+indicator of what the user has drawn.
+
+### Classifier
+
+Convert the information from the optical flow into a tensor (multi-dimensional feature vector),
+that can be used to train a support vector machine (SVM) or neural network 
+to distinguish between the different symbols.
+
+### Revelation
+
+After the computer has made its prediction, the user will reveal what they have
+drawn by holding it in front of the camera.
+
+## OpenCV
+
+The [OpenCV](http://opencv.org) library is a powerful computer vision library
+with language bindings for python, java, javascript, and C++. 
+The library includes many high performance implementation of simple
+and advanced vision algorithms.
+You can use this library when implementing a solution to This
+assignment.
+
+## Machine Learning
+
+There are many libraries that are popular for machine learning: 
+[scikit-learn](https://scikit-learn.org/stable/), 
+[PyTorch](https://pytorch.org), 
+[TensorFlow](https://www.tensorflow.org), 
+and [Keras](https://keras.io). 
+You can pick one of those or any similar library for your project.
+
+## Hint
+
+Magicians know for centuries that most people will choose the star (followed by the wave)
+when asked to select a random Zener symbol. So if your algorithm is unsure, you could
+always guess star.
+
+## Honesty declaration
+
+By submitting an assignment, you claim that your submission is only your own work. 
+This means that you have developed the design, implemented the code, run the experiments, 
+and all other work necessary to complete the assignment by yourself.
+
+If you discussed your work with other students or used sources on the Internet, then you **must**
+say so clearly at the beginning of the assignment.
+
+You can discuss parts of the assignment with others, but these discussions must be limited 
+to sharing ideas on a whiteboard or notepad. If you exchange code/programs/designs or 
+exchange any material via the Internet, then you must say so in your honesty declaration.
+
+Fill out the [Honesty Declaration](https://docs.google.com/document/d/1Z9FyOFt--OL_cqse55b-CifBgPDfFZi2L6-sUQBvZ4I/edit?usp=sharing) 
+and add any external sources that you used during the assignment.
+
+## Submissions
+
+This assignment must be done individually. 
+
+If you use information or code that is not your own (e.g., sample code from the Internet, 
+ideas for new features from a classmate, etc.), then you must specify this in your assignment 
+write-up. Failure to disclose that you used external sources will lead to disciplinary actions.
+
+To hand in your assignment:
+
+  1) Create a directory to hold all of your data. The directory name should be \<student id\>_a\<number\>, 
+     where \<student id\> is your student id and \<number\> is the number of the assignment,
+  1) Create a directory source inside of the directory \<student id\>_a\<number\>. 
+  1) Put the source code, which may contain of multiple files, for your assignment’s solution 
+     into the directory source.
+  1) Your prg\ram must compile by just running the command make in the source directory or a 
+     similar step for your programming language of choice.
+  1) Write a README file to explain anything you feel is necessary or important about your 
+     submission. This may include special features/bugs of your program. Describe what parts 
+     of the assignment you implemented. It is in your interest to simplify the job of the marker.
+
+
