@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/computer_vision/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/computer_vision/_next/static/chunks/webpack-d653625b79a56378.js" defer=""></script><script src="/computer_vision/_next/static/chunks/framework-3b5a00d5d7e8d93b.js" defer=""></script><script src="/computer_vision/_next/static/chunks/main-a2a531f00269d899.js" defer=""></script><script src="/computer_vision/_next/static/chunks/pages/_app-d6129b0203a36915.js" defer=""></script><script src="/computer_vision/_next/static/chunks/pages/assignment_edge_and_corner_detectors-88e96b60166d825f.js" defer=""></script><script src="/computer_vision/_next/static/EP-90JeNSBU2nzjrIsVoq/_buildManifest.js" defer=""></script><script src="/computer_vision/_next/static/EP-90JeNSBU2nzjrIsVoq/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h1>Assignment - Edge and Corner Detectors</h1>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/computer_vision/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/computer_vision/_next/static/chunks/webpack-c121860ffaf54019.js" defer=""></script><script src="/computer_vision/_next/static/chunks/framework-63157d71ad419e09.js" defer=""></script><script src="/computer_vision/_next/static/chunks/main-923b71ac2a36f578.js" defer=""></script><script src="/computer_vision/_next/static/chunks/pages/_app-949ae5490601d54e.js" defer=""></script><script src="/computer_vision/_next/static/chunks/pages/assignment_edge_and_corner_detectors-9ade7bf6d489b102.js" defer=""></script><script src="/computer_vision/_next/static/tsRFMnBQ93Uv-FWn_StgN/_buildManifest.js" defer=""></script><script src="/computer_vision/_next/static/tsRFMnBQ93Uv-FWn_StgN/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h1>Assignment - Edge and Corner Detectors</h1>
 <h1>15th November 2022 - 23:59</h1>
 <h2>Updates</h2>
 <ol>
@@ -6,14 +6,27 @@
 </ol>
 <h2>Introduction</h2>
 <p>The goal of this assignment is to develop a simple approach for
-estimation of the motion of a humanoid robot, so-called ego motion
+estimation of the motion of a robot, so-called ego motion
 estimation.</p>
 <p>Ego-motion estimation includes visual compass and visual odometry.</p>
 <p>The video below shows a video from our humanoid robot Robinion
 walking down a hallway in front of our lab.</p>
-<div><iframe width="640" height="360" src="https://www.youtube.com/embed/VHN9vbRzmNU" title="Robinion - Hallway 90" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+<div><iframe width="640" height="360" src="https://www.youtube.com/embed/VHN9vbRzmNU" title="Robinion - Hallway 90" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
 <p>You can use this video or create a similar video for your own robot
 project.</p>
+<h2>Methodology</h2>
+<p>Our goal is to develop an efficient and simple algorithm for
+estimating the angular and linear velocities of a moving robot.</p>
+<p>The idea is that instead of assuming a 3D world scene, we assume that the
+picture captured by the camera is created by a virtual image plane
+that is parallel to the camera. This assumption is valid if the distance
+of most objects to the camera is similar or objects are far away from the
+camera. Therefore, the robot looks at the horizon instead of the floor in front of it.</p>
+<p>In effect, we assume that our camera is looking at a large image of
+the world. We track the position of feature points in the image to estimate rotations
+(by detecting the rotation of edges in the image), and linear velocities
+(by checking the increase in scale of the feature points).</p>
+<div><p><img src="./camera_view.svg" alt="cam"/></p></div>
 <h2>Image Stabilization</h2>
 <p>First, we implement a system to stabilize the image and reduce
 motion blur for further processing.</p>
@@ -68,4 +81,4 @@ similar step for your programming language of choice.</li>
 <li>Write a README file to explain anything you feel is necessary or important about your
 submission. This may include special features/bugs of your program. Describe what parts
 of the assignment you implemented. It is in your interest to simplify the job of the marker.</li>
-</ol></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/assignment_edge_and_corner_detectors","query":{},"buildId":"EP-90JeNSBU2nzjrIsVoq","assetPrefix":"/computer_vision","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+</ol></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/assignment_edge_and_corner_detectors","query":{},"buildId":"tsRFMnBQ93Uv-FWn_StgN","assetPrefix":"/computer_vision","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
